@@ -1,0 +1,369 @@
+/**
+ * SPANIVE - Main Application Styles
+ * 
+ * This file contains the core design system and base styles for the Spanive application.
+ * It defines the CSS custom properties (variables) used throughout the application
+ * and provides common component styles.
+ */
+
+/* Import Inter font from Google Fonts for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/**
+ * Design System Variables
+ * These variables define the core design system used throughout the application
+ */
+:root {
+  /* Spacing Scale - Based on 8px grid system */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.5rem;    /* 24px */
+  --spacing-lg: 2rem;      /* 32px */
+  --spacing-xl: 3rem;      /* 48px */
+  --spacing-xxl: 4rem;     /* 64px */
+  
+  /* Color Palette */
+  --color-primary: #3498db;    /* Primary blue for main actions */
+  --color-secondary: #e74c3c;  /* Secondary red for accents */
+  --color-background: #ffffff; /* Main background color */
+  --color-background-alt: #f8f9fa; /* Alternative background color */
+  --color-text: #2d3748;       /* Main text color */
+  --color-text-light: #718096; /* Secondary text color */
+  
+  /* Border Radius */
+  --border-radius-sm: 8px;  /* Small elements */
+  --border-radius-md: 12px; /* Medium elements */
+  --border-radius-lg: 20px; /* Large elements */
+  
+  /* Shadow System */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);    /* Small elevation */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);    /* Medium elevation */
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);  /* Large elevation */
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Application Container */
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/**
+ * Common Component Styles
+ * These styles are used across multiple components
+ */
+
+/* Button Base Styles */
+.button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card Base Styles */
+.card {
+  background: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/**
+ * Responsive Design
+ * Adjusts spacing and layout for different screen sizes
+ */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+    --spacing-xxl: 3rem;
+  }
+  
+  .app-container {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Estilos base */
+.app-container {
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo oscuro */
+.app-container.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .card {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+
+/* Layout */
+header, main, footer {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Componentes */
+.card {
+  padding: 2em;
+  margin: 2rem auto;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.increment-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.decrement-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.reset-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.dark-mode-toggle {
+  background-color: #333;
+  color: white;
+  margin: 1rem 0;
+}
+
+.counter-display {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Efectos hover */
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Card Component */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+}
+
+/* Form Elements */
+.input {
+  width: 100%;
+  padding: var(--spacing-3);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Layout Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: var(--spacing-4);
+}
+
+/* Spacing Utilities */
+.m-4 { margin: var(--spacing-4); }
+.mt-4 { margin-top: var(--spacing-4); }
+.mb-4 { margin-bottom: var(--spacing-4); }
+.ml-4 { margin-left: var(--spacing-4); }
+.mr-4 { margin-right: var(--spacing-4); }
+
+.p-4 { padding: var(--spacing-4); }
+.pt-4 { padding-top: var(--spacing-4); }
+.pb-4 { padding-bottom: var(--spacing-4); }
+.pl-4 { padding-left: var(--spacing-4); }
+.pr-4 { padding-right: var(--spacing-4); }
+
+/* Responsive Utilities */
+@media (min-width: 640px) {
+  .sm\:flex { display: flex; }
+  .sm\:hidden { display: none; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex { display: flex; }
+  .md\:hidden { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex { display: flex; }
+  .lg\:hidden { display: none; }
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .sm\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Animation Utilities */
+.transition {
+  transition: all 0.2s ease;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+
+/* Background Utilities */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-surface { background-color: var(--color-surface); }

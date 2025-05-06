@@ -1,0 +1,157 @@
+.podcast-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.podcast-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.podcast-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.podcast-banner {
+  background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-content h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.featured-episodes h2,
+.podcast-categories h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.episodes-grid,
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.episode-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.episode-info {
+  flex: 1;
+}
+
+.episode-info h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.episode-info p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.episode-meta {
+  display: flex;
+  gap: 1rem;
+}
+
+.episode-meta span {
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.episode-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.play-button,
+.download-button {
+  background: none;
+  border: none;
+  color: #9C27B0;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.play-button:hover,
+.download-button:hover {
+  background: #f0f0f0;
+}
+
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-card h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.category-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.episode-count {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.return-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.return-button:hover {
+  background: #f0f0f0;
+} 

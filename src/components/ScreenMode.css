@@ -1,0 +1,157 @@
+/**
+ * ScreenMode Component Styles
+ * 
+ * This file contains styles for the screen mode selection screen of the Spanive application.
+ * It includes styling for the teacher type selection interface with PT and GT options.
+ */
+
+/* Component Container */
+.screen-mode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+}
+
+/* Logo Styles */
+.screen-mode-logo {
+  width: 400px;
+  height: auto;
+  margin: var(--spacing-xl) 0 var(--spacing-xxl);
+  filter: drop-shadow(var(--shadow-md));
+  object-fit: contain;
+}
+
+/* Question Text */
+.screen-mode-question {
+  text-align: center;
+  color: var(--color-text);
+  margin: var(--spacing-xl) 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 600px;
+}
+
+/* Teacher Selection Buttons Container */
+.teacher-buttons {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: auto;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Base Button Styles */
+.pt-button, .gt-button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Personal Teacher Button */
+.pt-button {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+/* General Teacher Button */
+.gt-button {
+  background: #f1c40f;
+  color: var(--color-text);
+}
+
+/* Button Hover Effects */
+.pt-button:hover, .gt-button:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Top Border Gradient */
+.pt-button::before, .gt-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show Gradient Border on Hover */
+.pt-button:hover::before, .gt-button:hover::before {
+  opacity: 1;
+}
+
+/* Return Button Styles */
+.return-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+.return-button svg {
+  font-size: 1.1rem;
+}
+
+.screen-return {
+  background: #f1c40f;
+  color: var(--color-text);
+}
+
+.screen-return:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/**
+ * Responsive Design
+ * Adjusts layout and spacing for mobile devices
+ */
+@media (max-width: 768px) {
+  .screen-mode-container {
+    padding: var(--spacing-lg);
+  }
+  
+  .screen-mode-logo {
+    width: 300px;
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
+  }
+  
+  .screen-mode-question {
+    font-size: 1.25rem;
+    margin: var(--spacing-lg) 0;
+  }
+  
+  .teacher-buttons {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .pt-button, .gt-button {
+    width: 100%;
+    min-width: unset;
+  }
+} 
