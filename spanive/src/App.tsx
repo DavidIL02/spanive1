@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import ScreenMode from './components/ScreenMode';
 import VoiceMode from './components/VoiceMode';
@@ -52,8 +52,6 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-
   useEffect(() => {
     console.log('App mounted');
   }, []);
@@ -61,27 +59,26 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <Routes>
-          <Route path="/" element={
-            <ErrorBoundary>
-              <LoadingScreen logoColors={{
-                white: 255,
-                blue: 55,
-                red: 5
-              }} logos={[logo]} />
-            </ErrorBoundary>
-          } />
-          <Route path="/voice-mode" element={<ErrorBoundary><VoiceMode /></ErrorBoundary>} />
-          <Route path="/screen-mode" element={<ErrorBoundary><ScreenMode /></ErrorBoundary>} />
-          <Route path="/gt-mode" element={<ErrorBoundary><GTMode /></ErrorBoundary>} />
-          <Route path="/teachers" element={<ErrorBoundary><TeacherProfiles /></ErrorBoundary>} />
-          <Route path="/teacher-calling" element={<ErrorBoundary><TeacherCalling /></ErrorBoundary>} />
-          <Route path="/teacher-lesson-screen" element={<ErrorBoundary><TeacherLessonScreen /></ErrorBoundary>} />
-          <Route path="/stories" element={<ErrorBoundary><Stories /></ErrorBoundary>} />
-          <Route path="/vocabulary" element={<ErrorBoundary><Vocabulary /></ErrorBoundary>} />
-          <Route path="/podcast" element={<ErrorBoundary><Podcast /></ErrorBoundary>} />
-          <Route path="/grammar" element={<ErrorBoundary><Grammar /></ErrorBoundary>} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<LoadingScreen logoColors={{
+              white: 255,
+              blue: 55,
+              red: 5
+            }} logos={[logo]} />} />
+            <Route path="/voice-mode" element={<VoiceMode />} />
+            <Route path="/screen-mode" element={<ScreenMode />} />
+            <Route path="/gt-mode" element={<GTMode />} />
+            <Route path="/teachers" element={<TeacherProfiles />} />
+            <Route path="/teacher-calling" element={<TeacherCalling />} />
+            <Route path="/teacher-lesson-screen" element={<TeacherLessonScreen />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/vocabulary" element={<Vocabulary />} />
+            <Route path="/podcast" element={<Podcast />} />
+            <Route path="/grammar" element={<Grammar />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </ErrorBoundary>
       </div>
     </Router>
   );
