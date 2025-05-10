@@ -367,3 +367,24 @@ button:not(:disabled):hover {
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-surface { background-color: var(--color-surface); }
+
+/* Global Logo Styles */
+.logo {
+  width: min(400px, 90vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(var(--shadow-md));
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: min(300px, 80vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: min(250px, 70vw);
+  }
+}

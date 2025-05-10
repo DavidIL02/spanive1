@@ -21,7 +21,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ logos }) => {
       <img 
         src={logos[0]} 
         alt="Spanive Logo"
-        className={`logo ${loading ? 'loading' : ''}`}
+        className="logo"
       />
       
       {!loading && (

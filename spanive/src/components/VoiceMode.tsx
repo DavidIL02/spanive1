@@ -12,7 +12,7 @@ const VoiceMode: React.FC = () => {
       <img 
         src={logo} 
         alt="Spanive Logo"
-        className="voice-mode-logo"
+        className="logo voice-mode-logo"
       />
       
       <div className="voice-buttons">

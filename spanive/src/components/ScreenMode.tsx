@@ -12,7 +12,7 @@ const ScreenMode: React.FC = () => {
       <img 
         src={logo} 
         alt="Spanive Logo"
-        className="screen-mode-logo"
+        className="logo screen-mode-logo"
       />
       
       <h3 className="screen-mode-question">

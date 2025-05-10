@@ -18,11 +18,7 @@
 
 /* Logo Styles */
 .screen-mode-logo {
-  width: 400px;
-  height: auto;
   margin: var(--spacing-xl) 0 var(--spacing-xxl);
-  filter: drop-shadow(var(--shadow-md));
-  object-fit: contain;
 }
 
 /* Question Text */
