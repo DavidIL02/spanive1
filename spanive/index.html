@@ -13,14 +13,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script>
-      window.addEventListener('error', function(e) {
-        console.error('Global error:', e.error);
-        if (e.error?.message?.includes('MIME type')) {
-          console.error('MIME type error detected. Please check server configuration.');
-        }
-      });
-    </script>
+    <!-- Vite will auto-inject scripts here -->
   </body>
 </html>
