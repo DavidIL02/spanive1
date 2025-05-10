@@ -4,15 +4,10 @@ import { FaMicrophone, FaDesktop } from 'react-icons/fa';
 import './LoadingScreen.css';
 
 interface LoadingScreenProps {
-  logoColors: {
-    white: number;
-    blue: number;
-    red: number;
-  };
   logos: string[];
 }
 
-const LoadingScreen: React.FC<LoadingScreenProps> = ({ logoColors, logos }) => {
+const LoadingScreen: React.FC<LoadingScreenProps> = ({ logos }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 

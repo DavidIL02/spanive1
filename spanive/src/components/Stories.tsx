@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaBook, FaLanguage } from 'react-icons/fa';
+import { FaArrowLeft, FaBook } from 'react-icons/fa';
 import './Stories.css';
 
 const Stories: React.FC = () => {

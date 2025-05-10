@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaHeadphones, FaPlay, FaPause, FaDownload } from 'react-icons/fa';
+import { FaArrowLeft, FaHeadphones, FaPlay, FaDownload } from 'react-icons/fa';
 import './Podcast.css';
 
 const Podcast: React.FC = () => {

@@ -10,21 +10,14 @@ import Vocabulary from './components/Vocabulary';
 import Podcast from './components/Podcast';
 import Grammar from './components/Grammar';
 import GTMode from './components/GTMode';
-import { useState } from 'react';
 import logo from './assets/logo.svg';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoadingScreen logoColors={{
-          white: 255,
-          blue: 55,
-          red: 5
-        }} logos={[logo]} />} />
+        <Route path="/" element={<LoadingScreen logos={[logo]} />} />
         <Route path="/voice-mode" element={<VoiceMode />} />
         <Route path="/screen-mode" element={<ScreenMode />} />
         <Route path="/gt-mode" element={<GTMode />} />
