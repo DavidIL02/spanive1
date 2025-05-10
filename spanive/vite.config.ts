@@ -6,6 +6,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: 'terser',
+    target: 'es2015'
+  },
+  server: {
+    port: 3000,
+    strictPort: true
   }
 })
