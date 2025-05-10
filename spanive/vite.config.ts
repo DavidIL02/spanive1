@@ -7,12 +7,18 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: false,
+    sourcemap: true,
     minify: 'terser',
-    target: 'es2015'
+    target: 'es2015',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   server: {
     port: 3000,
     strictPort: true
-  }
+  },
+  logLevel: 'info'
 })
